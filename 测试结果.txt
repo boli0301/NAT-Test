@@ -1,0 +1,602 @@
+【测试1：电信家宽公网，自己路由器的NAT】
+
+
+【测试2：校园网，端口内外不一样】
+
+:13146
+10.10.8.13:60165
+开始时间: 2026-04-01 20:31:33
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 生成随机端口: 60165
+检测到实际出口 IP: 10.10.8.13
+Local Bind (Actual): 10.10.8.13:60165
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=:13146, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = :13146
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+
+
+
+:13162
+10.10.8.13:50425
+
+开始时间: 2026-04-01 20:30:06
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+检测系统路由出口...
+检测到实际出口 IP: 10.10.8.13
+[端口] 生成随机端口: 50425
+Local Bind (Actual): 10.10.8.13:50425
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: :13162
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: :13162
+>>> Test 4: 正在判断 Restricted / Port Restricted...
+Test 4 Failed: 未收到回复 (限制IP和端口)。
+检测结束: Port Restricted Cone (端口限制型, NAT3)
+
+
+【测试3：电信蜂窝流量】
+
+111.183.109.136:19723
+10.193.33.49:61683
+
+开始时间: 2026-04-01 20:25:03
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 生成随机端口: 61683
+检测到实际出口 IP: 10.193.33.49
+Local Bind (Actual): 10.193.33.49:61683
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.109.136:19723, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.109.136:19723
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+111.183.109.136:19788
+10.193.33.49:59604
+
+开始时间: 2026-04-01 20:24:41
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 生成随机端口: 59604
+Local Bind (Actual): 10.193.33.49:59604
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.109.136:19788
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.109.136:19789
+映射地址改变! 
+[111.183.109.136:19788] -> [111.183.109.136:19789]
+检测结束: Symmetric (对称型)
+
+
+
+【测试4】再测一次
+
+111.183.109.136:19847
+10.193.33.49:49785
+
+开始时间: 2026-04-01 20:26:29
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 生成随机端口: 49785
+Local Bind (Actual): 10.193.33.49:49785
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.109.136:19847
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Failed: 备用服务器无响应。
+>>> Test 4: 正在判断 Restricted / Port Restricted...
+Test 4 Failed: 未收到回复 (限制IP和端口)。
+检测结束: Port Restricted Cone (端口限制型, NAT3)
+
+【测试5】再测一次
+
+111.183.109.136:19797
+10.193.33.49:61287
+
+开始时间: 2026-04-01 20:27:22
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 生成随机端口: 61287
+Local Bind (Actual): 10.193.33.49:61287
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.109.136:19797
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.109.136:19798
+映射地址改变! 
+[111.183.109.136:19797] -> [111.183.109.136:19798]
+检测结束: Symmetric (对称型)
+
+111.183.109.136:19764
+10.193.33.49:49839
+
+开始时间: 2026-04-01 20:29:11
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 生成随机端口: 51360
+Local Bind (Actual): 10.193.33.49:51360
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.109.136:19764, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.109.136:19764
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+【测试A】
+开始时间: 2026-04-01 20:49:12
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 连续固定模式，复用端口: 52661
+Local Bind (Actual): 10.193.33.49:52661
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.95.247:47613, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.95.247:47613
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+
+开始时间: 2026-04-01 20:49:51
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 连续固定模式，复用端口: 53969
+Local Bind (Actual): 10.193.33.49:53969
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47431
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Failed: 备用服务器无响应。
+>>> Test 4: 正在判断 Restricted / Port Restricted...
+Test 4 Failed: 未收到回复 (限制IP和端口)。
+检测结束: Port Restricted Cone (端口限制型, NAT3)
+
+【测试B】
+开始时间: 2026-04-01 20:50:39
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 生成随机端口: 63918
+Local Bind (Actual): 10.193.33.49:63918
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.95.247:47523, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.95.247:47523
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] No response
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+开始时间: 2026-04-01 20:51:01
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 生成随机端口: 53382
+Local Bind (Actual): 10.193.33.49:53382
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47583
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.95.247:47584
+映射地址改变! 
+[111.183.95.247:47583] -> [111.183.95.247:47584]
+检测结束: Symmetric (对称型)
+
+
+
+【测试C】不换+连续
+
+开始时间: 2026-04-01 20:47:02
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 连续固定模式，复用端口: 52661
+Local Bind (Actual): 10.193.33.49:52661
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.95.247:47613, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.95.247:47613
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+开始时间: 2026-04-01 20:46:55
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 连续固定模式，复用端口: 53969
+Local Bind (Actual): 10.193.33.49:53969
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47431
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.95.247:47432
+映射地址改变! 
+[111.183.95.247:47431] -> [111.183.95.247:47432]
+检测结束: Symmetric (对称型)
+
+
+【测试D】
+
+开始时间: 2026-04-01 20:49:12
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 连续固定模式，复用端口: 52661
+Local Bind (Actual): 10.193.33.49:52661
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.95.247:47613, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.95.247:47613
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+
+开始时间: 2026-04-01 20:48:22
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 连续固定模式，复用端口: 53969
+Local Bind (Actual): 10.193.33.49:53969
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47431
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.95.247:47432
+映射地址改变! 
+[111.183.95.247:47431] -> [111.183.95.247:47432]
+检测结束: Symmetric (对称型)
+
+【测试E】
+
+开始时间: 2026-04-01 20:51:28
+=== 开始 RFC5780 UDP 协议测试 ===
+[端口] 递增模式端口: 63921
+Local Bind (Actual): 10.193.33.49:63921
+>>> Mapping Test A: Binding...
+[Mapping-A] serverEp1 3.22.142.132:3478
+[Mapping-A] PublicEndPoint=111.183.95.247:47621, 
+ChangedEndPoint=3.135.212.85:3479
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+[Mapping-A] ChangedAddress = 3.135.212.85:3479
+>>> Mapping Test B: Change IP ...
+[Mapping-B] 方法1: 使用备用地址 3.135.212.85:3479
+[Mapping-B] ServerEp2: 3.135.212.85:3479
+[Mapping-B] PublicEndPoint = 111.183.95.247:47621
+>>> Mapping Test C: Change Port ...
+[Mapping-C] ServerEp1: 3.22.142.132:3478 (ChangePort)
+[Mapping-C] No response.
+Mapping 结果: Endpoint-Independent
+>>> Filtering Test I: Change Port ...
+[Filtering-I] serverEp1: 3.22.142.132:3478 (ChangePort)
+[Filtering-I] No response
+>>> Filtering Test II: Change IP + Port ...
+[Filtering-II] serverEp1: 3.22.142.132:3478 (ChangeIP+Port)
+[Filtering-II] Response OK
+Filtering 结果: Address-and-Port-Dependent
+最终检测结果:
+Mapping=Endpoint-Independent
+Filtering=Address-and-Port-Dependent
+
+开始时间: 2026-04-01 20:51:39
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 递增模式端口: 53383
+Local Bind (Actual): 10.193.33.49:53383
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47582
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Failed: 备用服务器无响应。
+>>> Test 4: 正在判断 Restricted / Port Restricted...
+Test 4 Failed: 未收到回复 (限制IP和端口)。
+检测结束: Port Restricted Cone (端口限制型, NAT3)
+
+【测试F】
+
+开始时间: 2026-04-01 20:52:52
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 连续固定模式，复用端口: 53385
+Local Bind (Actual): 10.193.33.49:53385
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47460
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Failed: 备用服务器无响应。
+>>> Test 4: 正在判断 Restricted / Port Restricted...
+Test 4 Failed: 未收到回复 (限制IP和端口)。
+检测结束: Port Restricted Cone (端口限制型, NAT3)
+
+
+【测试G】
+
+开始时间: 2026-04-01 20:53:22
+=== 开始 RFC3489 测试 ===
+正在解析服务器...
+RFC3489对IPV6测试不完善, 查询器X只实现了IPV4. 
+
+已为你选择服务器IPv4地址. 
+Server Original Address: 3.22.142.132:3478
+[端口] 连续固定模式，复用端口: 53385
+Local Bind (Actual): 10.193.33.49:53385
+>>> Test 1: 正在发送(Binding Request)...
+Test 1 Success. Public: 111.183.95.247:47460
+Test1 (Binding Request) 成功
+提示：备用服务器使用不同端口 (3478 → 3479)
+服务器配置正确: 3.22.142.132:3478 → 3.135.212.85:3479
+Server Changed Address: 3.135.212.85:3479
+注意：备用服务器端口不同 (3478 -> 3479)
+>>> Test 2: 正在检测 FullCone (Change IP&Port)...
+注意：备用服务器无响应，正在验证可用性...
+Test 2 Failed: 未收到回复 (非全锥型)。
+>>> Test 3: 正在检测 Symmetric (Server IP Change)...
+Test 3 Public: 111.183.95.247:47461
+映射地址改变! 
+[111.183.95.247:47460] -> [111.183.95.247:47461]
+检测结束: Symmetric (对称型)
+
+我在网上找到的资料：
+
+Symmetric Easy Increase NAT（对称型递增 NAT/地址和端口相关映射+地址和端口有关过滤/NAT4E）
+该类型在 Port Restricted Cone NAT 基础上限制了映射行为，但映射的端口是有规律的，例如：
+IPv4
+192.168.1.1:25565 ← 120.120.120.120:35565 ← 111.111.111.111:11010
+192.168.1.1:25565 ← 120.120.120.120:35566 ← 222.222.222.222:22020
+192.168.1.1:25565 ← 120.120.120.120:35567 ↚ 111.111.111.111:33030
+192.168.1.1:25565 ← 120.120.120.120:35568 ↚ 333.333.333.333:x（x代表任意端口）
+IPv6
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:35565 ← [240e::1]:11010
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:35567 ← [240e::2]:22020
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:35569 ↚ [240e::1]:33030
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:35571 ↚ [240e::3]:x（x代表任意端口）
+其中（111.111.111.111:11010、222.222.222.222:11010、[240e::1]:11010、[240e::2]:22020）为我指定的 IP 地址+端口号。
+Symmetric NAT（对称型 NAT/地址和端口相关映射+地址和端口有关过滤/NAT4）
+该类型在 Symmetric Easy Increase NAT 基础上限制了映射的端口，该端口随机，例如：
+IPv4
+192.168.1.1:25565 ← 120.120.120.120:66534 ← 111.111.111.111:11010
+192.168.1.1:25565 ← 120.120.120.120:32768 ← 222.222.222.222:22020
+192.168.1.1:25565 ← 120.120.120.120:26984 ↚ 111.111.111.111:33030
+192.168.1.1:25565 ← 120.120.120.120:16489 ↚ 333.333.333.333:x（x代表任意端口）
+IPv6
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:55645 ← [240e::1]:11010
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:32478 ← [240e::2]:22020
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:43269 ↚ [240e::1]:33030
+[fd00::1]:25565 ← [240e:3fd8:256a:3367::1]:11443 ↚ [240e::3]:x（x代表任意端口）
+其中（111.111.111.111:11010、222.222.222.222:11010、[240e::1]:11010、[240e::2]:22020）为我指定的 IP 地址+端口号。
